@@ -13,10 +13,11 @@ import { UsersApi } from "./user/datasources.js";
 //     getPosts: _getPosts,
 //   };
 // };
-export const context = async ({ req }) => {
+export const context = async ({ req, res }) => {
   const loggedUserId = await authorizeUser(req);
   return {
     loggedUserId,
+    res,
   };
 };
 
@@ -38,7 +39,7 @@ const authorizeUser = async (req) => {
 
     return userId;
   } catch (e) {
-    console.log("Error: ", e);
+    // console.log("Error: ", e);
     return "";
   }
 };
