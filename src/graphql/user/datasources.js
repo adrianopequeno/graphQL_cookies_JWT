@@ -17,14 +17,14 @@ export class UsersApi extends RESTDataSource {
   async getUsers(urlParams = {}) {
     // console.log('getUsers', urlParams);
     const response = await this.get("", urlParams, {
-      cacheOptions: { ttl: 60 }, // 60seg
+      cacheOptions: { ttl: 0 }, // 60seg
     });
     return response;
   }
 
   async getUser(id) {
     return await this.get(`/${id}`, undefined, {
-      cacheOptions: { ttl: 60 }, // 60seg
+      cacheOptions: { ttl: 0 }, // 60seg
     });
   }
 

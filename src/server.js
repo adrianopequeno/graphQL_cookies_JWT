@@ -17,6 +17,12 @@ const server = new ApolloServer({
       loginApi: new LoginApi(),
     };
   },
+  playground: {
+    settings: {
+      "request.credentials": "include",
+      "schema.polling.enable": false,
+    },
+  },
 });
 
 server.listen(4003).then(({ url }) => {

@@ -29,7 +29,7 @@ export class LoginApi extends RESTDataSource {
     // Response Header
     /** https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Guides/Cookies */
     this.context.res.cookie("jwtToken", token, {
-      secure: false, // Rede segura - Https +, em PRD configurar como true
+      secure: true, // Rede segura - Https +, em PRD configurar como true
       httpOnly: true, // Não deve ser acessado via código
       maxAge: 1000 * 60 * 60 * 24 * 7, // 7 dias
       path: "/", // Caminho que o cookie pode ser acessado
