@@ -23,6 +23,7 @@ const server = new ApolloServer({
       "schema.polling.enable": false,
     },
   },
+  uploads: false,
 });
 
 server.listen(4003).then(({ url }) => {
