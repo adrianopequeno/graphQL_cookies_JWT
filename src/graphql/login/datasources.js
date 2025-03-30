@@ -33,7 +33,7 @@ export class LoginApi extends RESTDataSource {
       httpOnly: true, // Não deve ser acessado via código
       maxAge: 1000 * 60 * 60 * 24 * 7, // 7 dias
       path: "/", // Caminho que o cookie pode ser acessado
-      sameSite: "strict", // strict, lax e none
+      sameSite: "none", // strict, lax e none
     });
 
     return { userId, token };
